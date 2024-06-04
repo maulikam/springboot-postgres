@@ -1,7 +1,5 @@
-package com.springboot.example.entity;
+package com.springboot.example.dto;
 
-
-import jakarta.persistence.*;
 import lombok.*;
 
 @Getter
@@ -9,12 +7,8 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Entity
-@Table(name = "intership")
-public class Intership {
+public class InternshipDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     private String name;
@@ -28,5 +22,6 @@ public class Intership {
     private String city;
 
     private String state;
+
 
 }

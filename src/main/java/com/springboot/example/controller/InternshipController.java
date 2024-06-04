@@ -1,7 +1,7 @@
 package com.springboot.example.controller;
 
 
-import com.springboot.example.entity.Intership;
+import com.springboot.example.dto.InternshipDTO;
 import com.springboot.example.service.InternshipService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -16,16 +16,24 @@ public class InternshipController {
     private InternshipService internshipService;
 
     @GetMapping
-    public List<Intership> getInternships() {
+    public List<InternshipDTO> getInternships() {
         return internshipService.getInterships();
     }
 
     @PostMapping
-    public Intership createIntership(@RequestBody Intership intership) {
+    public InternshipDTO createIntership(@RequestBody InternshipDTO intership) {
         return internshipService.createIntership(intership);
     }
 
+    @GetMapping("/{id}")
+    public InternshipDTO getInternshipById(@PathVariable int id) {
+        return internshipService.getInternshipById(id);
+    }
 
+    @GetMapping("/name/{name}")
+    public InternshipDTO getInternshipByName(@PathVariable String name) {
+        return internshipService.getInternshipByName(name);
+    }
 
 
 

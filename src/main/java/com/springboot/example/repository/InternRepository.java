@@ -18,5 +18,7 @@ public interface InternRepository extends JpaRepository<Intership, Integer> {
 
     Optional<Intership> getIntershipByCity(String city);
 
+    Optional<Intership> getIntershipByName(String name);
+
 
 }
